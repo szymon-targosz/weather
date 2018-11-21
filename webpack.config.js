@@ -25,7 +25,7 @@ module.exports = env => {
                     loader: 'css-loader',
                     options: {
                         sourceMap: true,
-                        url: false
+                        // url: false
                     }
                 }, {
                     loader: 'postcss-loader'
@@ -33,6 +33,15 @@ module.exports = env => {
                     loader: 'sass-loader',
                     options: {
                         sourceMap: true
+                    }
+                }]
+            }, {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/'
                     }
                 }]
             }]
