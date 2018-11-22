@@ -1,5 +1,24 @@
 .header {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-    justify-self: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba($off-white, .25);
+    
+    &__title {
+        font-weight: 400;
+        font-size: 3rem;
+    }
+
+    @supports(-webkit-background-clip: text) {
+        color: transparent;
+
+        &__title,
+        &__date {
+            background-image: url('../img/bg.jpg');
+            background-size: cover;
+            -webkit-background-clip: text;
+        }
+    }
 }

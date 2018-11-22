@@ -1,0 +1,12 @@
+.forecast {
+    grid-column: 1 / -1;
+    background-color: rgba($off-white, .25);
+    color: transparent;
+    
+    h1 {
+        background-image: url('../img/bg.jpg');
+        background-size: cover;
+        webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+}

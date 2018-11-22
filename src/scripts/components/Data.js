@@ -68,7 +68,7 @@ export default class Data extends React.Component {
 
                 <div className='data__group'>
                     <Icon icon='wind' classes='icon' />
-                    <p className='data__detail'>{wind.speed} m/s</p>
+                    <p className='data__detail'>{wind.speed.toFixed(1)} m/s</p>
                 </div>
 
                 <div className='data__group'>

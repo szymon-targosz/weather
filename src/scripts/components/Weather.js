@@ -3,6 +3,7 @@ import { byCityName, forecast } from '../request';
 import Header from './Header';
 import Search from './Search';
 import Data from './Data';
+import Forecast from './Forecast';
 import Loading from './Loading';
 
 export default class Weather extends React.Component {
@@ -13,8 +14,12 @@ export default class Weather extends React.Component {
             city: 'london',
             countryCode: 'gb',
             data: undefined,
-            error: undefined,
-            ready: false
+            tomorrow: undefined,
+            dayAfter: undefined,
+            dayNext: undefined,
+            dayNext2x: undefined,
+            ready: false,
+            error: undefined
         };
     }
 
@@ -38,8 +43,19 @@ export default class Weather extends React.Component {
             this.setState(() => ({ error: undefined }));
             try {
                 const data = await byCityName(this.state.city, this.state.countryCode);
+                const {
+                    tomorrow,
+                    dayAfter,
+                    dayNext,
+                    dayNext2x
+                } = await forecast(this.state.city, this.state.countryCode);
+
                 this.setState(() => ({
                     data,
+                    tomorrow,
+                    dayAfter,
+                    dayNext,
+                    dayNext2x,
                     error: undefined
                 }));
             } catch (err) {
@@ -58,7 +74,6 @@ export default class Weather extends React.Component {
         return (
             <div className='container'>
                 <Header />
-                
                 <Search
                     city={this.state.city}
                     countryCode={this.state.countryCode}
@@ -68,17 +83,31 @@ export default class Weather extends React.Component {
                     error={this.state.error}
                 />
                 <Data data={this.state.data} />
+                <Forecast
+                    tomorrow={this.state.tomorrow}
+                    dayAfter={this.state.dayAfter}
+                    dayNext={this.state.dayNext}
+                    dayNext2x={this.state.dayNext2x}
+                />
             </div>
         )
     }
 
     async componentDidMount() {
         const data = await byCityName(this.state.city, this.state.countryCode);
-        const forecastData = await forecast(this.state.city, this.state.countryCode);
-        console.log(forecastData);
+        const {
+            tomorrow,
+            dayAfter,
+            dayNext,
+            dayNext2x
+        } = await forecast(this.state.city, this.state.countryCode);
 
         this.setState(() => ({
             data,
+            tomorrow,
+            dayAfter,
+            dayNext,
+            dayNext2x,
             ready: true
         }));
     }

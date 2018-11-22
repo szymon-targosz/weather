@@ -17,6 +17,7 @@
         font-size: inherit;
         text-transform: inherit;
         letter-spacing: inherit;
+        width: 100%;
 
         &:focus {
             outline: none;
@@ -41,6 +42,10 @@
         visibility: hidden;
         transform: translateY(-4rem);
     } 
+
+    &__btn {
+        margin: 0 auto;
+    }
 }
 
 .error {

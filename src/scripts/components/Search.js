@@ -40,7 +40,7 @@ export default class Search extends React.Component {
                 </div>
                 {this.props.error && <p className='error'>{this.props.error}</p>}
 
-                <button type='submit' className='btn'>
+                <button type='submit' className='btn form__btn'>
                     <span className="btn__visible">Check</span>
                     <span className="btn__invisible">Search</span>
                 </button>
