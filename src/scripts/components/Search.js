@@ -1,48 +1,49 @@
 import React from 'react';
 
 export default class Search extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            error: undefined
-        }
-    }
-
     onSubmit = e => {
         e.preventDefault();
         const city = e.target.elements.city.value.trim();
         const countryCode = e.target.elements.countryCode.value.trim();
 
-        if (!city || !countryCode) {
-            this.setState(() => ({ error: 'Fill both fields' }));
-        } else if (!(/^[A-za-z]{2}$/).test(countryCode)) {
-            this.setState(() => ({ error: 'Wrong country code' }));
-        } else {
-            this.setState(() => ({ error: undefined }));
-            console.log('last block')
-            this.props.handleSubmit();
-        }
+        this.props.handleSubmit(city, countryCode);
     }
 
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
-                <input
-                    type='text'
-                    name='city'
-                    placeholder='City'
-                    value={this.props.city}
-                    onChange={this.props.onCityChange}
-                />
-                <input
-                    type='text'
-                    name='countryCode'
-                    placeholder='Country code'
-                    value={this.props.countryCode}
-                    onChange={this.props.onCountryChange}
-                />
-                <input type="submit" value="Search" />
-                {this.state.error && <p>{this.state.error}</p>}
+            <form className='form' onSubmit={this.onSubmit}>
+                <div className='form__group'>
+                    <input
+                        id='city'
+                        className='form__input'
+                        type='text'
+                        name='city'
+                        placeholder='City'
+                        value={this.props.city}
+                        onChange={this.props.onCityChange}
+                        required
+                    />
+                    <label htmlFor="city" className='form__label'>City</label>
+                </div>
+                <div className='form__group'>
+                    <input
+                        id='countryCode'
+                        className='form__input'
+                        type='text'
+                        name='countryCode'
+                        placeholder='Country code'
+                        value={this.props.countryCode}
+                        onChange={this.props.onCountryChange}
+                        required
+                    />
+                    <label htmlFor="countryCode" className='form__label'>Country Code</label>
+                </div>
+                {this.props.error && <p className='error'>{this.props.error}</p>}
+
+                <button type='submit' className='btn'>
+                    <span className="btn__visible">Check</span>
+                    <span className="btn__invisible">Search</span>
+                </button>
             </form>
         );
     }
