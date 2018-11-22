@@ -1,5 +1,5 @@
 import React from 'react';
-import { byCityName } from '../request';
+import { byCityName, forecast } from '../request';
 import Header from './Header';
 import Search from './Search';
 import Data from './Data';
@@ -74,6 +74,9 @@ export default class Weather extends React.Component {
 
     async componentDidMount() {
         const data = await byCityName(this.state.city, this.state.countryCode);
+        const forecastData = await forecast(this.state.city, this.state.countryCode);
+        console.log(forecastData);
+
         this.setState(() => ({
             data,
             ready: true

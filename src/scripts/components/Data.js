@@ -32,11 +32,11 @@ export default class Data extends React.Component {
             <div className='data'>
                 <div className='data__group data__group--main'>
                     <i className={`data__icon-weather owf owf-${weather[0].id}`}></i>
-                    <p className='data__detail'>{weather[0].description}</p>
+                    <p className='data__detail m-none'>{weather[0].description}</p>
                 </div>
 
                 <div className='data__group data__group--main'>
-                    <p className='data__detail data__detail--lg'>{temp}&deg;{this.state.scale === 'c' ? 'C' : 'F'}</p>
+                    <p className='data__detail data__detail--lg m-none'>{temp}&deg;{this.state.scale === 'c' ? 'C' : 'F'}</p>
 
                     <div>
                         <button
