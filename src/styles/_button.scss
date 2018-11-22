@@ -1,0 +1,80 @@
+.btn {
+    cursor: pointer;
+    position: relative;
+    background: none;
+    border: 3px solid $off-white;
+    color: inherit;
+    font-size: 1.8rem;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-top: 2rem;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    font-weight: inherit;
+
+    & > * {
+        text-align: center;
+        // height: 100%;
+        display: block;
+        transition: all .2s;
+    }
+    
+    &__visible {
+        padding: 1.5rem 3rem;
+
+    }
+    
+    &__invisible {
+        padding: 1.5rem 0;
+        background-color: $off-white;
+        color: #333;
+        width: 100%;
+        position: absolute;
+        top: -100%;
+        left: 0;
+    }
+
+    
+    &:hover,
+    &:focus {
+        transform: translateY(-3px);
+        outline: none;    
+    }
+
+    &:active {
+        transform: translateY(-1px);
+    }
+
+    &:hover &__invisible {
+        top: 0;
+    }
+
+    &:hover &__visible {
+        transform: translateY(100%);
+    }
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    font-size: inherit;
+    padding: .5rem;
+    cursor: pointer;
+    color: rgba($off-white, .65);
+    border-bottom: 1px solid transparent;
+    transition: all .2s;
+
+    &:not(:last-child) {
+        margin-right: 2rem;
+    }
+    
+    &--active {
+        color: inherit;
+    }
+
+    &:focus,
+    &:hover {
+        outline: none;
+        border-bottom: 1px solid currentColor;
+    }
+}

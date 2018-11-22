@@ -1,0 +1,26 @@
+$off-white: #f7f7f7;
+$color-error: #dc3545;
+$font-sm: 1.3rem;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to right, transparent, rgba(#333, .65)), url('../img/bg.jpg');
+    background-size: cover;
+    background-repeat: none;
+    min-height: 100vh;
+    color: $off-white;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+::selection {
+    background-color: #96DA90;
+    color: white;
+}
