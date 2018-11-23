@@ -1,48 +1,42 @@
 .btn {
-    cursor: pointer;
     position: relative;
-    background: none;
-    border: 3px solid $off-white;
-    color: inherit;
     font-size: 1.8rem;
+    border: 2px solid $off-white;
     overflow: hidden;
-    border-radius: 3px;
-    margin-top: 2rem;
-    text-transform: inherit;
-    letter-spacing: inherit;
-    font-weight: inherit;
+    border-radius: $b-radius;
     display: block;
-
+    margin-top: 2rem;
+    transition: $transition;
+    
     & > * {
-        text-align: center;
-        // height: 100%;
-        display: block;
-        transition: all .2s;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        transition: $transition;
     }
     
     &__visible {
         padding: 1.5rem 3rem;
-
     }
     
     &__invisible {
-        padding: 1.5rem 0;
-        background-color: $off-white;
-        color: #333;
-        width: 100%;
         position: absolute;
         top: -100%;
-        left: 0;
+        left: 0;    
+        background-color: $off-white;
+        color: #333;
+        padding: 1.5rem 2.5rem;
     }
 
-    
     &:hover,
     &:focus {
+        box-shadow: 0 1rem 2rem $color-shadow;
         transform: translateY(-3px);
         outline: none;    
     }
 
     &:active {
+        box-shadow: 0 .5rem 1rem $color-shadow;
         transform: translateY(-1px);
     }
 
@@ -56,14 +50,12 @@
 }
 
 .btn-text {
-    background: none;
     border: none;
     font-size: inherit;
     padding: .5rem;
-    cursor: pointer;
     color: rgba($off-white, .65);
-    border-bottom: 1px solid transparent;
-    transition: all .2s;
+    @include b-bottom(transparent);
+    transition: $transition;
 
     &:not(:last-child) {
         margin-right: 2rem;
@@ -76,6 +68,6 @@
     &:focus,
     &:hover {
         outline: none;
-        border-bottom: 1px solid currentColor;
+        @include b-bottom(currentColor);
     }
 }

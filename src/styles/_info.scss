@@ -4,11 +4,12 @@
     &__group {
         display: flex;
         align-items: center;
-        transition: all .2s ease-in;
+        transition: $transition;
         justify-content: center;
 
         &:hover {
             transform: scale(1.1);
+            box-shadow: 0 1rem 2rem $color-shadow;
         }
 
         &--long {
@@ -34,10 +35,6 @@
         }
 
         &--sm {
-            font-size: 1rem;
-        }
-
-        &--secondary {
             font-size: 1.5rem;
         }
     }

@@ -1,27 +1,34 @@
-$off-white: #f7f7f7;
-$color-error: #dc3545;
-$font-sm: 1.3rem;
-
 html {
     font-size: 62.5%;
     box-sizing: border-box;
 }
 
 body {
-    background-image: linear-gradient(rgba(#333, .4)), url('../img/bg.jpg');
+    background-image: linear-gradient(rgba(#333, .3)), url('../img/bg.jpg');
     background-size: cover;
     background-repeat: none;
     min-height: 100vh;
     color: $off-white;
     text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
+    font-family: $font;
     font-weight: 300;
     font-size: 2rem;
     letter-spacing: 2px;
-
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media only screen and (max-width: $bp-md) {
+        display: block;
+    }
+}
+
+button {
+    cursor: pointer;
+    color: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    background: none;
 }
 
 ::selection {

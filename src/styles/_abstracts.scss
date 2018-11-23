@@ -1,0 +1,20 @@
+$off-white: #f7f7f7;
+$color-error: #dc3545;
+$color-shadow: rgba(#000, .2);
+$color-frosted: rgba($off-white, .5);
+
+$font: 'Roboto', sans-serif;
+$font-sm: 1.5rem;
+
+$b-radius: 4px;
+
+$transition: all .2s;
+
+$bp-md: 50em; // 800px
+$bp-sm: 28.75em; // 460px
+$bp-xs: 25em; // 400px
+
+
+@mixin b-bottom($col) {
+    border-bottom: 2px solid $col;
+}

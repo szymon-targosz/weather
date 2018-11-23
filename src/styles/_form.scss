@@ -10,7 +10,7 @@
     &__input {
         background: rgba($off-white, .01);
         border: none;
-        border-bottom: 2px solid transparent;
+        @include b-bottom(transparent);
         color: inherit;
         font-family: inherit;
         padding: 1.5rem 3rem;
@@ -21,10 +21,10 @@
 
         &:focus {
             outline: none;
-            border-bottom: 2px solid $off-white;
+            @include b-bottom($off-white);
 
             &:invalid {
-                border-bottom: 2px solid $color-error;
+                @include b-bottom($color-error);
             }
         }
     }

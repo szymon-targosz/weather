@@ -16,14 +16,14 @@ const ForecastDay = ({ data }) => (
         <div className='info__group'>
             <Icon icon='thermometer' classes='icon' />
             <p className='info__detail'>
-                {getCelsius(data.tempMin).toFixed(0)} &ndash; {getCelsius(data.tempMax).toFixed(0)}&deg;C
+                {getCelsius(data.tempMin).toFixed(0)} &#47; {getCelsius(data.tempMax).toFixed(0)}&deg;C
             </p>
         </div>
 
         <div className='info__group'>
             <Icon icon='thermometer' classes='icon icon--sm' />
-            <p className='info__detail info__detail--secondary'>
-                {getFahrenheit(data.tempMin).toFixed(0)} &ndash; {getFahrenheit(data.tempMax).toFixed(0)}&deg;F
+            <p className='info__detail info__detail--sm'>
+                {getFahrenheit(data.tempMin).toFixed(0)} &#47; {getFahrenheit(data.tempMax).toFixed(0)}&deg;F
             </p>
         </div>
 
