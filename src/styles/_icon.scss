@@ -7,4 +7,21 @@
         width: 6rem;
         height: 6rem;
     }
+
+    &--sm {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+.font-icon {
+    font-size: 4rem;
+
+    &--lg {
+        font-size: 9rem;
+    }
+
+    &--sm {
+        font-size: 2rem;
+    }
 }

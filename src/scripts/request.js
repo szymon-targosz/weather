@@ -61,7 +61,7 @@ const computeForecastDay = (day) => {
     let temps = [];
     let pressures = [];
 
-    day.forEach(({ main, weather }) => {
+    day.forEach(({ main }) => {
         temps.push(main.temp);
         pressures.push(main.pressure);
     });
@@ -70,12 +70,16 @@ const computeForecastDay = (day) => {
     const tempMax = getMaxValue(temps);
     const pressure = getAverage(pressures);
     const icon = day[4].weather[0].id;
+    const description = day[4].weather[0].description;
+    const dayName = moment.unix(day[4].dt).format('dddd');
     
     return {
         tempMin,
         tempMax,
         pressure,
-        icon
+        icon,
+        description,
+        dayName
     };
 };
 

@@ -1,0 +1,44 @@
+.info {
+    font-weight: 400;
+
+    &__group {
+        display: flex;
+        align-items: center;
+        transition: all .2s ease-in;
+        justify-content: center;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &--long {
+            grid-column: 1 / -1;
+        }
+
+        &--d-column {
+            flex-direction: column;
+        }
+    }
+
+    &__detail {
+        font-size: 1.8rem;
+        margin-left: 1rem;
+        text-align: center;
+        
+        &--lg {
+            font-size: 5rem;
+        }
+        
+        &--md {
+            font-size: 2.25rem;
+        }
+
+        &--sm {
+            font-size: 1rem;
+        }
+
+        &--secondary {
+            font-size: 1.5rem;
+        }
+    }
+}

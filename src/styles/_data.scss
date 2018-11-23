@@ -5,36 +5,4 @@
     justify-items: center;
     align-items: center;
     text-align: center;
-    
-    &__group {
-        display: flex;
-        align-items: center;
-        transition: all .2s;
-        
-        &--main {
-            flex-direction: column;
-        }
-
-        &--full {
-            grid-column: 1 / -1;
-        }
-
-        &:hover:not(:nth-child(2)) {
-            transform: translateX(-.5rem);
-        }
-    }
-
-    &__detail {
-        font-size: 1.8rem;
-        margin-left: 1rem;
-        
-        &--lg {
-            font-size: 5rem;
-        }
-    }
-
-    &__icon-weather {
-        font-size: 10rem;
-    }
-
 }

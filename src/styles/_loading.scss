@@ -13,13 +13,13 @@
         align-items: center;
         justify-content: center;
         position: relative;
-        animation: spin 3s infinite linear;
+        animation: spin 4s infinite linear;
     }
 
     &__icon {
     
         &--1 {
-            animation: spin 3s infinite linear;
+            animation: spin 4s infinite linear;
         }
 
         &--2,
@@ -32,25 +32,25 @@
         &--2 {
             left: -3rem;
             top: calc(50% - 3rem);
-            animation: spin--2 3s infinite linear;
+            animation: spin--2 4s infinite linear;
         }
         
         &--3 {
             top: calc(50% - 3rem);
             left: calc(100% - 3rem);
-            animation: spin--3 3s infinite linear;
+            animation: spin--3 4s infinite linear;
         }
         
         &--4 {
             left: calc(50% - 3rem);            
             top: calc(100% - 3rem);
-            animation: spin--4 3s infinite linear;
+            animation: spin--4 4s infinite linear;
         }
         
         &--5 {
             top: -3rem;
             left: calc(50% - 3rem);
-            animation: spin--5 3s infinite linear;
+            animation: spin--5 4s infinite linear;
         }
     }
 

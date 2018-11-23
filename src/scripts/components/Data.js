@@ -1,7 +1,8 @@
 import React from 'react';
 import Icon from './Icon';
+import { getCelsius, getFahrenheit } from '../scales';
 
-export default class Data extends React.Component {
+export default class info extends React.Component {
     state = {
         scale: 'c'
     }
@@ -14,29 +15,21 @@ export default class Data extends React.Component {
         this.setState((prevState) => ({ scale: 'f' }));
     }
 
-    getCelsius(kelvin) {
-        return kelvin - 273;
-    }
-
-    getFahrenheit(kelvin) {
-        return (kelvin * 1.8) - 459.67;
-    }
-
     render() {
         const { weather, main, wind, clouds, name, sys } = this.props.data;
         const mainTemp = main.temp.toFixed(0);
 
-        const temp = this.state.scale === 'c' ? this.getCelsius(mainTemp).toFixed(0) : this.getFahrenheit(mainTemp).toFixed(0);
+        const temp = this.state.scale === 'c' ? getCelsius(mainTemp).toFixed(0) : getFahrenheit(mainTemp).toFixed(0);
 
         return (
-            <div className='data'>
-                <div className='data__group data__group--main'>
-                    <i className={`data__icon-weather owf owf-${weather[0].id}`}></i>
-                    <p className='data__detail m-none'>{weather[0].description}</p>
+            <div className='data info'>
+                <div className='info__group info__group--d-column'>
+                    <i className={`font-icon font-icon--lg owf owf-${weather[0].id}`}></i>
+                    <p className='info__detail m-none'>{weather[0].description}</p>
                 </div>
 
-                <div className='data__group data__group--main'>
-                    <p className='data__detail data__detail--lg m-none'>{temp}&deg;{this.state.scale === 'c' ? 'C' : 'F'}</p>
+                <div className='info__group info__group--d-column'>
+                    <p className='info__detail info__detail--lg m-none'>{temp}&deg;{this.state.scale === 'c' ? 'C' : 'F'}</p>
 
                     <div>
                         <button
@@ -51,29 +44,29 @@ export default class Data extends React.Component {
                     </div>
                 </div>
 
-                <div className='data__group data__group--full'>
+                <div className='info__group info__group--long'>
                     <Icon icon='location' classes='icon' />
-                    <p className='data__detail'>{name}, {sys.country}</p>
+                    <p className='info__detail'>{name}, {sys.country}</p>
                 </div>
 
-                <div className='data__group'>
+                <div className='info__group'>
                     <Icon icon='pressure' classes='icon' />
-                    <p className='data__detail'>{main.pressure} hPa</p>
+                    <p className='info__detail t-transform-none'>{main.pressure} hPa</p>
                 </div>
 
-                <div className='data__group'>
+                <div className='info__group'>
                     <Icon icon='humidity' classes='icon' />
-                    <p className='data__detail'>{main.humidity} %</p>
+                    <p className='info__detail'>{main.humidity} %</p>
                 </div>
 
-                <div className='data__group'>
+                <div className='info__group'>
                     <Icon icon='wind' classes='icon' />
-                    <p className='data__detail'>{wind.speed.toFixed(1)} m/s</p>
+                    <p className='info__detail t-transform-none'>{wind.speed.toFixed(1)} m/s</p>
                 </div>
 
-                <div className='data__group'>
+                <div className='info__group'>
                     <Icon icon='clouds' classes='icon' />
-                    <p className='data__detail'>{clouds.all} %</p>
+                    <p className='info__detail'>{clouds.all} %</p>
                 </div>
             </div>
         );

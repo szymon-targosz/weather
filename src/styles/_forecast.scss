@@ -1,12 +1,17 @@
 .forecast {
     grid-column: 1 / -1;
-    background-color: rgba($off-white, .25);
-    color: transparent;
-    
-    h1 {
-        background-image: url('../img/bg.jpg');
-        background-size: cover;
-        webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
+    background-color: rgba($off-white, .5);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-items: center;
+    grid-gap: 3rem;
+
+    &__day {
+        display: flex;
+        flex-direction: column;
+
+        & > *:not(:last-child) {
+            margin-bottom: 1rem;
+        }
     }
 }

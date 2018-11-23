@@ -1,13 +1,12 @@
 .container {
+    width: 90vw;
     max-width: 80rem;
-    position: relative;
-    border-radius: 3px;
+    border-radius: 4px;
     box-shadow: inset 0 0 1rem 1px rgba($off-white, .65);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
     grid-gap: 3rem;
-    margin: 0 auto;
-    margin-top: 15rem;
+    overflow: hidden;
 
     & > * {
         padding: 1.5rem;
