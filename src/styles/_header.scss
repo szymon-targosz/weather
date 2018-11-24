@@ -6,7 +6,7 @@
     align-items: center;
     background-color: $color-frosted;
     
-    @media only screen and (max-width: $bp-md) {
+    @media only screen and (max-width: $bp-xs) {
         flex-direction: column;
         align-items: start;
     }
