@@ -65,7 +65,7 @@ const computeForecastDay = (day) => {
         temps.push(main.temp);
         pressures.push(main.pressure);
     });
-
+	
     const tempMin = getMinValue(temps);
     const tempMax = getMaxValue(temps);
     const pressure = getAverage(pressures);
